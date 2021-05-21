@@ -1,0 +1,14 @@
+@charset "utf-8";
+.tit_top{padding: 110px 0 60px;}
+.tit{font-size: 34px;letter-spacing: 10px;font-weight: 700;text-align: center;background: pink;}
+section.section{height: 100vh;}
+
+/*fullpage 인디케이터 버튼(#fp-nav)*/
+#fp-nav.fp-right{right: 150px;}
+#fp-nav ul li:last-child{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+#fp-nav ul li + li{margin-top: 20px;}
+#fp-nav ul li a span, .fp-slidesNav ul li a span, #fp-nav ul li:hover a span{width: 6px;height: 6px;border: 2px solid #aaa;background: none;margin: -5px 0 0 -5px;}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span{width: 12px;height: 12px;background: #d60037;border: none;margin: -6px 0 0 -6px;}
+#fp-nav ul li:hover a span{border-color: #d60037;}
+#fp-nav ul li .fp-tooltip{padding: 0 10px;height: 22px;line-height: 22px;background: #d60037;color: #fff;font-family: NtSansKR;top: -5px;border-radius: 3px;margin-right: 3px;overflow: visible;}
+#fp-nav ul li:hover .fp-tooltip::after, #fp-nav.fp-show-active a.active + .fp-tooltip::after{content: "";position: absolute;right: -6px;top: 7px;border-left: 6px solid #d60037;border-top: 4px solid transparent;border-bottom: 4px solid transparent;}

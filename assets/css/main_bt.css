@@ -1,0 +1,73 @@
+@charset "utf-8";
+iframe{border: none;} /* 태그 초기화에 추가해요 */
+
+.tit_top{padding: 110px 0 60px;}
+.tit{font-size: 34px;letter-spacing: 10px;font-weight: 700;text-align: center;background: pink;}
+section .section{height: 100vh;}
+
+/*fullpage 인디케이터 버튼(#fp-nav)*/
+#fp-nav.fp-right{right: 150px;}
+#fp-nav ul li + li{margin-top: 20px;}
+#fp-nav ul li:last-child{width: 1px;height: 1;border: none;overflow: hidden;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+#fp-nav ul li a span, .fp-slidesNav ul li a span, #fp-nav ul li:hover a span{width: 6px;height: 6px;border: 2px solid #aaa;background: none;margin: -5px 0 0 -5px;}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span{width: 12px;height: 12px;background: #d60037;border: none;margin: -6px 0 0 -6px;}
+#fp-nav ul li:hover a span{border-color: #d60037;}
+#fp-nav ul li .fp-tooltip{padding: 0 10px;height: 22px;line-height: 22px;background: #d60037;color: #fff;font-family: NtSansKR;top: -5px;border-radius: 3px;margin-right: 3px;overflow: visible;}
+#fp-nav ul li:hover .fp-tooltip::after, #fp-nav.fp-show-active a.active + .fp-tooltip::after{content: "";position: absolute;right: -6px;top: 7px;border-left: 6px solid #d60037;border-top: 4px solid transparent;border-bottom: 4px solid transparent;}
+
+/* #cnt3 */
+#cnt3 h2{font-size: 24px;text-align: center;font-size: 26px;letter-spacing: 7.8px;padding-top: 110px;}/* margin-top: 300px; 이 아니라 헤더 높이 만큼인 110, 부모안에 첫번째 자식 margin-top 대신 padding-top 주기 */
+
+/* 1) 슬라이더 상세 내용 */
+#cnt3 .film{height: 574px;overflow: hidden;margin-top: 85px;} /* .swiper를 감싸는 div.film을 하나 더 만들어서 넘쳐나는 내용 숨기기 합니다 */
+#cnt3 .swiper-container{overflow: visible;}
+
+#cnt3 .swiper-wrapper{height: 504px;} /* 영상 높이 만큼으로 줄여주세요 */
+#cnt3 .swiper-slide{border-radius: 60px;overflow: hidden;} /* 둥근 모서리 지정하고 overflow:hidden으로 숨기면 포토샵 디자인 처럼 되요 */
+
+/* 2) 이전다음버튼 */
+#cnt3 .prev_next{width: 29px;height: 43px;}
+#cnt3 .swiper-button-prev{background: url("../images/main/brandfilm-left.png");left: 21.5%;} /* 버튼의 위치를 양쪽 끝에서 영상 사이로 변경 */
+#cnt3 .swiper-button-next{background: url("../images/main/brandfilm-right.png");right: 21.5%;}
+#cnt3 .swiper-button-prev:after, #cnt3 .swiper-button-next:after{display: none;}
+
+/* #cnt3 .controller > div, #cnt3 .controller .stop_play{position: absolute;background: no-repeat;} */
+#cnt3 .controller{position: absolute;bottom: -70px;left: 50%;width: 456px;height: 17px;transform: translateX(-50%);/* background: yellow; */}
+/* 2) pagination 은 swiper.css에서 처음부터 absolute 였답니다 */
+.swiper-pagination{top: -10px;left: 0;height: 3px;}/* top: -10px;을 올려주어야 라인들이 보여지네요.. 이건 이상해요 좀 */
+.swiper-pagination span{width: 124px;margin-right: 22px;}
+
+
+/* 4) 정지실행버튼 */
+#cnt3 .controller .stop_play{position: absolute;right: 0;width: 14px;height: 17px;}
+#cnt3 .controller .btn_stop{background: url("../images/main/brandfilm-stop.png");}
+#cnt3 .controller .btn_play{background: url("../images/main/sec3_play-solid.svg");display: none;}
+
+/* #cnt4 */
+#cnt4 .info{padding: 200px 300px 0 300px;/* border: 1px solid red; */}
+#cnt4 ul{justify-content: space-between;}
+#cnt4 ul .up{padding-bottom: 130px;/* background: green; */}
+#cnt4 ul .down{padding-top: 130px;/* background: aqua; */}
+#cnt4 ul li{opacity: 0;transition: all 1s;}
+#cnt4 ul li:nth-child(odd){-webkit-transform: translateY(50px);-moz-transform: translateY(50px);-o-transform: translateY(50px);transform: translateY(50px);}
+#cnt4 ul li:nth-child(even){-webkit-transform: translateY(100px);-moz-transform: translateY(100px);-o-transform: translateY(100px);transform: translateY(100px);}
+#cnt4.on ul li{opacity: 1;-webkit-transform: translateY(0px);-moz-transform: translateY(0px);-o-transform: translateY(0px);transform: translateY(0);}
+#cnt4 ul li:nth-child(even){transition-delay: 0.3s;}
+
+#cnt4 ul li h2{position: relative;font-size: 34px;letter-spacing: 2.55px;}
+#cnt4 ul li h2::after{content: "";position: absolute;width: 71px;height: 70px;left: 0;top: -90px; background: no-repeat;}
+#cnt4 ul .tit1 h2::after{background: url("../images/main/article-4-news.jpg");}
+#cnt4 ul .tit2 h2::after{background: url("../images/main/article-4-event.jpg");}
+#cnt4 ul .tit3 h2::after{background: url("../images/main/article-4-open.jpg");}
+#cnt4 ul .tit4 h2::after{background: url("../images/main/article-4-mobile.jpg");width: 48px;}
+#cnt4 ul li .top p{position: relative;margin: 20px 0 56px 0;color: #555; /* background: white; */}
+#cnt4 ul li .top p::after{content: "";position: absolute;width: 30px;height: 1px;bottom: -28px;left: 0;background: #aaa;}
+#cnt4 ul li .bottom img, #cnt4 ul li .bottom .over{width: 227px;height: 227px;border-radius: 15px;}
+#cnt4 ul li .bottom p{font-size: 14px;margin-top: 12.5px;letter-spacing: -0.14px;}
+#cnt4 ul li .bottom{position: relative;}
+#cnt4 ul li .bottom .over{position: absolute;top: 0;left: 0;right: 0;transition: all 1s;opacity: 0;padding-top: 130px;-moz-box-sizing: border-box;box-sizing: border-box;}/* bdbox추가함 */
+#cnt4 ul li .bottom .over.on{background: rgba(0, 0, 0, .4);opacity: 1;color: #fff;padding-top: 90px;}
+#cnt4 ul li .bottom .over p{position: relative;text-align: center;font-size: 14px;}
+#cnt4 ul li .bottom .over p::after{content: "";position: absolute;top: 26px;left: calc(50% - 34px);width: 68px;height: 1px;background: #fff;}
+
+
